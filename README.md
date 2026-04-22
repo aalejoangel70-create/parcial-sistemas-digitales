@@ -164,7 +164,8 @@ Tabla de selección:
 
 ---
 
-3. Sumador Medio, Sumador Completo y Circuitos Secuenciales
+## 3. Sumador Medio, Sumador Completo y Circuitos Secuenciales
+
 Sumador Medio (Half Adder)
 Es un circuito que suma 2 bits y da dos resultados: la suma y el acarreo. Su limitación es que no puede recibir acarreo de entrada, por eso no se puede encadenar solo.
 Sumador Completo (Full Adder)
@@ -173,20 +174,12 @@ Circuitos Secuenciales
 Son circuitos que tienen memoria, es decir, su salida depende no solo de lo que entra ahora sino también de lo que pasó antes. Usan flip-flops para guardar ese estado. Ejemplos típicos son los contadores y los registros.
 
 ## 4. Mapa de Karnaugh
-
-###  ¿Qué es?
-
 El Mapa de Karnaugh es una herramienta gráfica que permite simplificar funciones booleanas de forma visual y sin hacer álgebra compleja.
----
-
-###  ¿Para qué sirve?
-
+sirve para:
 - Minimizar la cantidad de compuertas lógicas necesarias en un circuito.
 - Reducir el costo, tamaño y consumo de energía del hardware.
 - Obtener la expresión booleana más simple posible (Suma de Productos o Producto de Sumas).
 - Identificar implicantes, implicantes primos y simplificar con errores mínimos.
-
----
 
 ###  ¿Cómo funciona?
 
