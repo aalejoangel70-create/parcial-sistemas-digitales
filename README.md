@@ -175,3 +175,95 @@ Función: F(A,B) = {1, 2, 3} → minterms 1, 2 y 3
 - El grupo de los tres 1s se simplifica a: F = A + B
 - Sin K-Map: F = A'B + AB' + AB (más complejo)
 - Con K-Map: F = A + B  (mucho más simple)
+
+
+---
+
+## 2.a Análisis de la ecuación booleana
+
+### Ecuación:
+
+```
+X = [ AB̄((C + BD) + ĀB̄) ] C
+```
+
+---
+
+### Descomposición por partes
+
+Para entender y construir el circuito, se divide la ecuación en partes más pequeñas:
+
+| Parte | Expresión | Descripción |
+|-------|-----------|-------------|
+| P1 | `BD` | AND entre B y D |
+| P2 | `C + BD` | OR entre C y el resultado P1 |
+| P3 | `AB̄ · (C + BD)` | AND entre A, B̄ y P2 |
+| P4 | `ĀB̄` | AND entre A negado y B negado |
+| P5 | `P3 + P4` | OR entre P3 y P4 → contenido del corchete |
+| X | `P5 · C` | AND final con C |
+
+---
+
+### Tabla de Verdad
+
+> Variables: A, B, C, D → 2⁴ = 16 combinaciones
+
+| A | B | C | D | BD | C+BD | AB̄ | AB̄(C+BD) | ĀB̄ | [P5] | X |
+|---|---|---|---|----|------|----|-----------|-----|------|-------|
+| 0 | 0 | 0 | 0 |  0 |  0   |  0 |     0     |  1  |  1   | 0 |
+| 0 | 0 | 0 | 1 |  0 |  0   |  0 |     0     |  1  |  1   | 0 |
+| 0 | 0 | 1 | 0 |  0 |  1   |  0 |     0     |  1  |  1   | 1 |
+| 0 | 0 | 1 | 1 |  0 |  1   |  0 |     0     |  1  |  1   | 1 |
+| 0 | 1 | 0 | 0 |  0 |  0   |  0 |     0     |  0  |  0   | 0 |
+| 0 | 1 | 0 | 1 |  1 |  1   |  0 |     0     |  0  |  0   | 0 |
+| 0 | 1 | 1 | 0 |  0 |  1   |  0 |     0     |  0  |  0   | 0 |
+| 0 | 1 | 1 | 1 |  1 |  1   |  0 |     0     |  0  |  0   | 0 |
+| 1 | 0 | 0 | 0 |  0 |  0   |  1 |     0     |  0  |  0   | 0 |
+| 1 | 0 | 0 | 1 |  0 |  0   |  1 |     0     |  0  |  0   | 0 |
+| 1 | 0 | 1 | 0 |  0 |  1   |  1 |     1     |  0  |  1   | 1 |
+| 1 | 0 | 1 | 1 |  0 |  1   |  1 |     1     |  0  |  1   | 1 |
+| 1 | 1 | 0 | 0 |  0 |  0   |  0 |     0     |  0  |  0   | 0 |
+| 1 | 1 | 0 | 1 |  1 |  1   |  0 |     0     |  0  |  0   | 0 |
+| 1 | 1 | 1 | 0 |  0 |  1   |  0 |     0     |  0  |  0   | 0 |
+| 1 | 1 | 1 | 1 |  1 |  1   |  0 |     0     |  0  |  0   | 0 |
+
+> X = 1 únicamente cuando: `A=0,B=0,C=1,D=0` | `A=0,B=0,C=1,D=1` | `A=1,B=0,C=1,D=0` | `A=1,B=0,C=1,D=1`
+>
+> Patrón: X solo es 1 cuando C=1 y B=0
+
+---
+
+### Circuito Lógico
+
+El circuito se construye con las siguientes compuertas en orden:
+
+```
+Entradas: A, B, C, D
+
+1. NOT(B) → B̄
+2. NOT(A) → Ā
+3. NOT(B) → B̄  (para ĀB̄)
+
+4. AND(B, D)              → BD
+5. OR(C, BD)              → C + BD
+6. AND(A, B̄, C+BD)       → AB̄(C+BD)
+7. AND(Ā, B̄)             → ĀB̄
+8. OR(AB̄(C+BD), ĀB̄)     → [ corchete ]
+9. AND(corchete, C)       → X  
+```
+
+Diagrama del circuito:
+
+```
+A ────────────────────────────────────[AND]──────[OR]──[AND]── X
+B ──[NOT]────────────────────────────[AND]        │       │
+                                                  │       │
+C ──────────────────────[OR]─────────[AND]        │     C─┘
+B ──────────[AND]────────┘                        │
+D ──────────┘                                     │
+                                                  │
+A ──[NOT]──[AND]──────────────────────────────────┘
+B ──[NOT]──┘
+```
+
+> 📎 Ver imagen del circuito: `circuito_2a.svg`
