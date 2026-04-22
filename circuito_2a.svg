@@ -1,0 +1,134 @@
+<svg width="860" height="420" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="13">
+  <rect width="860" height="420" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="430" y="28" fill="#94a3b8" text-anchor="middle" font-size="14" font-weight="bold">X = [ AB̄((C + BD) + ĀB̄) ] C</text>
+
+  <!-- ===== INPUT LABELS ===== -->
+  <text x="18" y="75"  fill="#7dd3fc" font-weight="bold">A</text>
+  <text x="18" y="115" fill="#7dd3fc" font-weight="bold">B</text>
+  <text x="18" y="160" fill="#7dd3fc" font-weight="bold">C</text>
+  <text x="18" y="205" fill="#7dd3fc" font-weight="bold">B</text>
+  <text x="18" y="245" fill="#7dd3fc" font-weight="bold">D</text>
+  <text x="18" y="310" fill="#7dd3fc" font-weight="bold">A</text>
+  <text x="18" y="350" fill="#7dd3fc" font-weight="bold">B</text>
+
+  <!-- Input wires -->
+  <line x1="32" y1="72"  x2="80" y2="72"  stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="112" x2="80" y2="112" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="157" x2="80" y2="157" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="202" x2="110" y2="202" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="242" x2="110" y2="242" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="307" x2="80" y2="307" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="32" y1="347" x2="80" y2="347" stroke="#7dd3fc" stroke-width="1.5"/>
+
+  <!-- ===== NOT GATES (bubbles on inputs) ===== -->
+  <!-- NOT B (for AB̄) -->
+  <circle cx="88" cy="112" r="8" fill="none" stroke="#f472b6" stroke-width="1.8"/>
+  <text x="98" y="116" fill="#f472b6" font-size="11">B̄</text>
+
+  <!-- NOT A (for ĀB̄) -->
+  <circle cx="88" cy="307" r="8" fill="none" stroke="#f472b6" stroke-width="1.8"/>
+  <text x="98" y="311" fill="#f472b6" font-size="11">Ā</text>
+
+  <!-- NOT B (for ĀB̄) -->
+  <circle cx="88" cy="347" r="8" fill="none" stroke="#f472b6" stroke-width="1.8"/>
+  <text x="98" y="351" fill="#f472b6" font-size="11">B̄</text>
+
+  <!-- ===== GATE 1: AND(B,D) ===== -->
+  <!-- AND gate shape -->
+  <path d="M110,190 L130,190 Q148,190 148,222 Q148,254 130,254 L110,254 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="2"/>
+  <text x="119" y="226" fill="#38bdf8" font-size="11" font-weight="bold">AND</text>
+  <line x1="110" y1="202" x2="110" y2="202" stroke="#38bdf8" stroke-width="1.5"/>
+  <line x1="110" y1="242" x2="110" y2="242" stroke="#38bdf8" stroke-width="1.5"/>
+  <line x1="148" y1="222" x2="180" y2="222" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="153" y="218" fill="#94a3b8" font-size="11">BD</text>
+
+  <!-- ===== GATE 2: OR(C, BD) ===== -->
+  <path d="M180,145 Q195,145 200,157 Q210,157 210,175 Q210,193 200,193 Q195,205 180,205 Q190,181 190,175 Q190,169 180,145 Z" fill="#1e3a5f" stroke="#34d399" stroke-width="2"/>
+  <text x="183" y="178" fill="#34d399" font-size="11" font-weight="bold">OR</text>
+  <!-- inputs to OR -->
+  <line x1="155" y1="157" x2="180" y2="157" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="148" y1="222" x2="165" y2="222" stroke="#38bdf8" stroke-width="1.5"/>
+  <line x1="165" y1="222" x2="165" y2="193" stroke="#38bdf8" stroke-width="1.5"/>
+  <line x1="165" y1="193" x2="180" y2="193" stroke="#38bdf8" stroke-width="1.5"/>
+  <!-- output wire -->
+  <line x1="210" y1="175" x2="240" y2="175" stroke="#34d399" stroke-width="1.5"/>
+  <text x="213" y="171" fill="#94a3b8" font-size="11">C+BD</text>
+
+  <!-- ===== GATE 3: AND(AB̄, C+BD) ===== -->
+  <path d="M240,62 L260,62 Q278,62 278,94 Q278,126 260,126 L240,126 Z" fill="#1e3a5f" stroke="#a78bfa" stroke-width="2"/>
+  <text x="246" y="97" fill="#a78bfa" font-size="11" font-weight="bold">AND</text>
+  <!-- A input -->
+  <line x1="32" y1="72"  x2="240" y2="72"  stroke="#7dd3fc" stroke-width="1.5"/>
+  <!-- B̄ input -->
+  <line x1="96" y1="112" x2="130" y2="112" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="130" y1="112" x2="130" y2="116" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="130" y1="116" x2="240" y2="116" stroke="#f472b6" stroke-width="1.5"/>
+  <!-- C+BD input comes down -->
+  <line x1="210" y1="175" x2="225" y2="175" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="225" y1="175" x2="225" y2="94"  stroke="#34d399" stroke-width="1.5"/>
+  <line x1="225" y1="94"  x2="240" y2="94"  stroke="#34d399" stroke-width="1.5"/>
+  <!-- output -->
+  <line x1="278" y1="94" x2="320" y2="94" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="281" y="90" fill="#94a3b8" font-size="10">AB̄(C+BD)</text>
+
+  <!-- ===== GATE 4: AND(Ā, B̄) ===== -->
+  <path d="M110,295 L130,295 Q148,295 148,327 Q148,359 130,359 L110,359 Z" fill="#1e3a5f" stroke="#fb923c" stroke-width="2"/>
+  <text x="117" y="330" fill="#fb923c" font-size="11" font-weight="bold">AND</text>
+  <line x1="96" y1="307" x2="110" y2="307" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="96" y1="347" x2="110" y2="347" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="148" y1="327" x2="200" y2="327" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="153" y="323" fill="#94a3b8" font-size="11">ĀB̄</text>
+
+  <!-- ===== GATE 5: OR(AB̄(C+BD), ĀB̄) ===== -->
+  <path d="M320,82 Q335,82 340,94 Q350,94 350,112 Q350,130 340,130 Q335,142 320,142 Q330,118 330,112 Q330,106 320,82 Z" fill="#1e3a5f" stroke="#34d399" stroke-width="2"/>
+  <text x="323" y="115" fill="#34d399" font-size="11" font-weight="bold">OR</text>
+  <!-- AB̄(C+BD) input -->
+  <line x1="278" y1="94"  x2="320" y2="94"  stroke="#a78bfa" stroke-width="1.5"/>
+  <!-- ĀB̄ comes up -->
+  <line x1="200" y1="327" x2="305" y2="327" stroke="#fb923c" stroke-width="1.5"/>
+  <line x1="305" y1="327" x2="305" y2="130" stroke="#fb923c" stroke-width="1.5"/>
+  <line x1="305" y1="130" x2="320" y2="130" stroke="#fb923c" stroke-width="1.5"/>
+  <!-- output -->
+  <line x1="350" y1="112" x2="400" y2="112" stroke="#34d399" stroke-width="1.5"/>
+  <text x="353" y="108" fill="#94a3b8" font-size="10">[...]</text>
+
+  <!-- ===== GATE 6: Final AND([...], C) ===== -->
+  <path d="M400,100 L420,100 Q440,100 440,112 Q440,124 420,124 L400,124 Z" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.5"/>
+  <text x="407" y="116" fill="#fbbf24" font-size="11" font-weight="bold">AND</text>
+  <!-- [...] input -->
+  <line x1="350" y1="112" x2="400" y2="112" stroke="#34d399" stroke-width="1.5"/>
+  <!-- C input comes from above -->
+  <line x1="32" y1="157" x2="60" y2="157" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="60"  y1="157" x2="60"  y2="380" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="60"  y1="380" x2="390" y2="380" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="390" y1="380" x2="390" y2="122" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="390" y1="122" x2="400" y2="122" stroke="#7dd3fc" stroke-width="1.5"/>
+  <!-- output -->
+  <line x1="440" y1="112" x2="500" y2="112" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- ===== OUTPUT X ===== -->
+  <text x="505" y="117" fill="#fbbf24" font-size="16" font-weight="bold">X</text>
+
+  <!-- Legend -->
+  <rect x="560" y="60" width="270" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="695" y="82" fill="#94a3b8" text-anchor="middle" font-size="12" font-weight="bold">Leyenda de compuertas</text>
+  <rect x="575" y="95" width="14" height="14" rx="2" fill="#38bdf8" opacity="0.3" stroke="#38bdf8"/>
+  <text x="596" y="107" fill="#38bdf8" font-size="12">AND(B,D) → BD</text>
+  <rect x="575" y="118" width="14" height="14" rx="2" fill="#34d399" opacity="0.3" stroke="#34d399"/>
+  <text x="596" y="130" fill="#34d399" font-size="12">OR(C, BD) → C+BD</text>
+  <rect x="575" y="141" width="14" height="14" rx="2" fill="#a78bfa" opacity="0.3" stroke="#a78bfa"/>
+  <text x="596" y="153" fill="#a78bfa" font-size="12">AND(A,B̄,C+BD)</text>
+  <rect x="575" y="164" width="14" height="14" rx="2" fill="#fb923c" opacity="0.3" stroke="#fb923c"/>
+  <text x="596" y="176" fill="#fb923c" font-size="12">AND(Ā,B̄) → ĀB̄</text>
+  <rect x="575" y="187" width="14" height="14" rx="2" fill="#34d399" opacity="0.3" stroke="#34d399"/>
+  <text x="596" y="199" fill="#34d399" font-size="12">OR(AB̄(C+BD), ĀB̄)</text>
+  <rect x="575" y="210" width="14" height="14" rx="2" fill="#fbbf24" opacity="0.3" stroke="#fbbf24"/>
+  <text x="596" y="222" fill="#fbbf24" font-size="12">AND final → X</text>
+  <circle cx="582" cy="248" r="7" fill="none" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="596" y="252" fill="#f472b6" font-size="12">○ = Compuerta NOT</text>
+
+  <!-- Bottom note -->
+  <text x="430" y="405" fill="#475569" text-anchor="middle" font-size="11">Parcial Electrónica Digital – Punto 2.a</text>
+</svg>
