@@ -353,7 +353,7 @@ Entradas: A, B, C, D, E
 7. OR(AB̄C[BD+CDE], AC)        → X  
 ```
 
-**Diagrama del circuito:**
+Diagrama del circuito:
 
 ```
 A ──────────────────────────────────[AND]──────[OR]── X
@@ -369,7 +369,5 @@ E ──────┘                                        │
 A ──────[AND(AC)]────────────────────────────────┘
 C ──────┘
 ```
-
-> 📎 Ver imagen del circuito:
 
 ![Circuito lógico X = AB̄C[BD + CDE] + AC](circuito_2b.svg)
