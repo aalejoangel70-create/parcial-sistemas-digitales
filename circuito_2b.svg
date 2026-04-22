@@ -1,0 +1,132 @@
+<svg width="920" height="500" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="13">
+  <rect width="920" height="500" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="460" y="28" fill="#94a3b8" text-anchor="middle" font-size="14" font-weight="bold">X = AB̄C[BD + CDE] + AC</text>
+
+  <!-- ===== INPUT LABELS ===== -->
+  <text x="14" y="70"  fill="#7dd3fc" font-weight="bold">A</text>
+  <text x="14" y="110" fill="#7dd3fc" font-weight="bold">B</text>
+  <text x="14" y="155" fill="#7dd3fc" font-weight="bold">C</text>
+  <text x="14" y="210" fill="#7dd3fc" font-weight="bold">B</text>
+  <text x="14" y="250" fill="#7dd3fc" font-weight="bold">D</text>
+  <text x="14" y="305" fill="#7dd3fc" font-weight="bold">C</text>
+  <text x="14" y="345" fill="#7dd3fc" font-weight="bold">D</text>
+  <text x="14" y="385" fill="#7dd3fc" font-weight="bold">E</text>
+  <text x="14" y="440" fill="#7dd3fc" font-weight="bold">A</text>
+  <text x="14" y="475" fill="#7dd3fc" font-weight="bold">C</text>
+
+  <!-- Input wires -->
+  <line x1="28" y1="67"  x2="75"  y2="67"  stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="107" x2="75"  y2="107" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="152" x2="75"  y2="152" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="207" x2="105" y2="207" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="247" x2="105" y2="247" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="302" x2="105" y2="302" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="342" x2="105" y2="342" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="382" x2="105" y2="382" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="437" x2="105" y2="437" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="28" y1="472" x2="105" y2="472" stroke="#7dd3fc" stroke-width="1.5"/>
+
+  <!-- NOT B -->
+  <circle cx="83" cy="107" r="8" fill="none" stroke="#f472b6" stroke-width="1.8"/>
+  <text x="94" y="111" fill="#f472b6" font-size="11">B̄</text>
+
+  <!-- ===== GATE 1: AND(B,D) → BD ===== -->
+  <path d="M105,195 L125,195 Q143,195 143,227 Q143,259 125,259 L105,259 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="2"/>
+  <text x="112" y="230" fill="#38bdf8" font-size="11" font-weight="bold">AND</text>
+  <line x1="143" y1="227" x2="175" y2="227" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="148" y="222" fill="#94a3b8" font-size="10">BD</text>
+
+  <!-- ===== GATE 2: AND(C,D,E) → CDE ===== -->
+  <path d="M105,290 L125,290 Q143,290 143,342 Q143,394 125,394 L105,394 Z" fill="#1e3a5f" stroke="#fb923c" stroke-width="2"/>
+  <text x="110" y="345" fill="#fb923c" font-size="11" font-weight="bold">AND</text>
+  <line x1="143" y1="342" x2="175" y2="342" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="148" y="337" fill="#94a3b8" font-size="10">CDE</text>
+
+  <!-- ===== GATE 3: OR(BD, CDE) → BD+CDE ===== -->
+  <path d="M175,215 Q192,215 197,227 Q207,227 207,250 Q207,273 197,273 Q192,285 175,285 Q186,261 186,250 Q186,239 175,215 Z" fill="#1e3a5f" stroke="#34d399" stroke-width="2"/>
+  <text x="178" y="253" fill="#34d399" font-size="11" font-weight="bold">OR</text>
+  <line x1="143" y1="227" x2="175" y2="227" stroke="#38bdf8" stroke-width="1.5"/>
+  <line x1="143" y1="342" x2="160" y2="342" stroke="#fb923c" stroke-width="1.5"/>
+  <line x1="160" y1="342" x2="160" y2="273" stroke="#fb923c" stroke-width="1.5"/>
+  <line x1="160" y1="273" x2="175" y2="273" stroke="#fb923c" stroke-width="1.5"/>
+  <line x1="207" y1="250" x2="240" y2="250" stroke="#34d399" stroke-width="1.5"/>
+  <text x="210" y="245" fill="#94a3b8" font-size="10">BD+CDE</text>
+
+  <!-- ===== GATE 4: AND(A, B̄, C, bracket) ===== -->
+  <path d="M240,55 L260,55 Q278,55 278,105 Q278,155 260,155 L240,155 Z" fill="#1e3a5f" stroke="#a78bfa" stroke-width="2"/>
+  <text x="246" y="108" fill="#a78bfa" font-size="11" font-weight="bold">AND</text>
+  <!-- A wire -->
+  <line x1="28"  y1="67"  x2="240" y2="67"  stroke="#7dd3fc" stroke-width="1.5"/>
+  <!-- B̄ wire -->
+  <line x1="91"  y1="107" x2="130" y2="107" stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="130" y1="107" x2="130" y2="90"  stroke="#f472b6" stroke-width="1.5"/>
+  <line x1="130" y1="90"  x2="240" y2="90"  stroke="#f472b6" stroke-width="1.5"/>
+  <!-- C wire -->
+  <line x1="28"  y1="152" x2="50"  y2="152" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="50"  y1="152" x2="50"  y2="113" stroke="#7dd3fc" stroke-width="1.5"/>
+  <line x1="50"  y1="113" x2="240" y2="113" stroke="#7dd3fc" stroke-width="1.5"/>
+  <!-- bracket wire -->
+  <line x1="207" y1="250" x2="225" y2="250" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="225" y1="250" x2="225" y2="137" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="225" y1="137" x2="240" y2="137" stroke="#34d399" stroke-width="1.5"/>
+  <!-- output -->
+  <line x1="278" y1="105" x2="360" y2="105" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="281" y="100" fill="#94a3b8" font-size="10">AB̄C[..]</text>
+
+  <!-- ===== GATE 5: AND(A, C) → AC ===== -->
+  <path d="M105,425 L125,425 Q143,425 143,455 Q143,485 125,485 L105,485 Z" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2"/>
+  <text x="112" y="458" fill="#fbbf24" font-size="11" font-weight="bold">AND</text>
+  <line x1="143" y1="455" x2="360" y2="455" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="148" y="450" fill="#94a3b8" font-size="10">AC</text>
+
+  <!-- ===== GATE 6: OR(AB̄C[..], AC) → X ===== -->
+  <path d="M360,93 Q377,93 382,105 Q392,105 392,130 Q392,155 382,155 Q377,167 360,167 Q371,143 371,130 Q371,117 360,93 Z" fill="#1e3a5f" stroke="#f87171" stroke-width="2.5"/>
+  <text x="363" y="133" fill="#f87171" font-size="11" font-weight="bold">OR</text>
+  <!-- AB̄C[..] input -->
+  <line x1="278" y1="105" x2="360" y2="105" stroke="#a78bfa" stroke-width="1.5"/>
+  <!-- AC comes up -->
+  <line x1="143" y1="455" x2="345" y2="455" stroke="#fbbf24" stroke-width="1.5"/>
+  <line x1="345" y1="455" x2="345" y2="155" stroke="#fbbf24" stroke-width="1.5"/>
+  <line x1="345" y1="155" x2="360" y2="155" stroke="#fbbf24" stroke-width="1.5"/>
+  <!-- output X -->
+  <line x1="392" y1="130" x2="450" y2="130" stroke="#f87171" stroke-width="2.5"/>
+  <text x="455" y="135" fill="#f87171" font-size="18" font-weight="bold">X</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="560" y="50" width="330" height="260" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="725" y="72" fill="#94a3b8" text-anchor="middle" font-size="12" font-weight="bold">Leyenda de compuertas</text>
+
+  <rect x="575" y="85"  width="14" height="14" rx="2" fill="#38bdf8" opacity="0.3" stroke="#38bdf8"/>
+  <text x="596" y="97"  fill="#38bdf8" font-size="12">AND(B, D) → BD</text>
+
+  <rect x="575" y="108" width="14" height="14" rx="2" fill="#fb923c" opacity="0.3" stroke="#fb923c"/>
+  <text x="596" y="120" fill="#fb923c" font-size="12">AND(C, D, E) → CDE</text>
+
+  <rect x="575" y="131" width="14" height="14" rx="2" fill="#34d399" opacity="0.3" stroke="#34d399"/>
+  <text x="596" y="143" fill="#34d399" font-size="12">OR(BD, CDE) → BD+CDE</text>
+
+  <rect x="575" y="154" width="14" height="14" rx="2" fill="#a78bfa" opacity="0.3" stroke="#a78bfa"/>
+  <text x="596" y="166" fill="#a78bfa" font-size="12">AND(A, B̄, C, BD+CDE)</text>
+
+  <rect x="575" y="177" width="14" height="14" rx="2" fill="#fbbf24" opacity="0.3" stroke="#fbbf24"/>
+  <text x="596" y="189" fill="#fbbf24" font-size="12">AND(A, C) → AC</text>
+
+  <rect x="575" y="200" width="14" height="14" rx="2" fill="#f87171" opacity="0.3" stroke="#f87171"/>
+  <text x="596" y="212" fill="#f87171" font-size="12">OR(AB̄C[..], AC) → X</text>
+
+  <circle cx="582" cy="232" r="7" fill="none" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="596" y="236" fill="#f472b6" font-size="12">○ = Compuerta NOT</text>
+
+  <!-- note about X=1 cases -->
+  <rect x="560" y="330" width="330" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="725" y="352" fill="#94a3b8" text-anchor="middle" font-size="12" font-weight="bold">X = 1 cuando:</text>
+  <text x="575" y="372" fill="#34d399" font-size="11">A=1, B=0, C=1 (cualquier D,E) → por AC</text>
+  <text x="575" y="390" fill="#34d399" font-size="11">A=1, B=1, C=1 (cualquier D,E) → por AC</text>
+  <text x="575" y="408" fill="#a78bfa" font-size="11">A=1, B=0, C=1, D=1, E=1 → también P4</text>
+  <text x="575" y="426" fill="#94a3b8" font-size="11">💡 Patrón: X=1 siempre que A=1 y C=1</text>
+
+  <!-- Bottom note -->
+  <text x="460" y="490" fill="#475569" text-anchor="middle" font-size="11">Parcial Electrónica Digital – Punto 2.b</text>
+</svg>
