@@ -266,4 +266,4 @@ A ──[NOT]──[AND]──────────────────�
 B ──[NOT]──┘
 ```
 
-> 📎 Ver imagen del circuito: `circuito_2a.svg`
+> ![Circuito 2a](circuito_2a.svg)
