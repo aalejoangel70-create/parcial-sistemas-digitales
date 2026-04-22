@@ -371,3 +371,6 @@ C ──────┘
 ```
 
 ![Circuito lógico X = AB̄C[BD + CDE] + AC](circuito_2b.svg)
+
+## PARTE EMPIRICA  ##
+https://aalejoangel70-create.github.io/parcial-sistemas-digitales/chatbot_semiconductores.html
