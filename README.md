@@ -130,39 +130,11 @@ Un latch cambia su salida mientras la señal de habilitación está activa, un f
 - Líneas de selección: S0, S1, S2 (3 bits → 2³ = 8 combinaciones)
 - Salida: Y (una sola)
 
-Tabla de selección:
-
-| S2 | S1 | S0 | Salida Y |
-|----|----|----|----------|
-| 0  | 0  | 0  | I0       |
-| 0  | 0  | 1  | I1       |
-| 0  | 1  | 0  | I2       |
-| 0  | 1  | 1  | I3       |
-| 1  | 0  | 0  | I4       |
-| 1  | 0  | 1  | I5       |
-| 1  | 1  | 0  | I6       |
-| 1  | 1  | 1  | I7       |
-
 ###  Demultiplexor de 8 Salidas (DEMUX 1:8)
 
 - Entrada de datos:D (una sola)
 - Líneas de selección: S0, S1, S2
 - Salidas: Y0, Y1, Y2, Y3, Y4, Y5, Y6, Y7
-
-Tabla de selección:
-
-| S2 | S1 | S0 | Salida activa |
-|----|----|----|---------------|
-| 0  | 0  | 0  | Y0 = D        |
-| 0  | 0  | 1  | Y1 = D        |
-| 0  | 1  | 0  | Y2 = D        |
-| 0  | 1  | 1  | Y3 = D        |
-| 1  | 0  | 0  | Y4 = D        |
-| 1  | 0  | 1  | Y5 = D        |
-| 1  | 1  | 0  | Y6 = D        |
-| 1  | 1  | 1  | Y7 = D        |
-
----
 
 ## 3. Sumador Medio, Sumador Completo y Circuitos Secuenciales
 
@@ -188,7 +160,6 @@ sirve para:
 2. Se colocan los 1s de la función en las celdas correspondientes.
 3. Se agrupan los 1s en grupos de 1, 2, 4, 8... (potencias de 2).
 4. Cada grupo elimina una variable de la expresión final.
-5. Cuanto más grande el grupo → expresión más simplificada.
 ---
 
 ###  Ejemplo con 2 variables (A, B)
